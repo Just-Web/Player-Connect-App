@@ -3,11 +3,13 @@
 ## Project Setup 
 
 ### Client Side 
+- Change directory to the '/client' directory
 - Install Yeoman, Bower and Grunt - `npm install -g yo bower grunt-cli`
 - Install generator-angular and generator-karma `npm install generator-angular generator-karma`
 - Install bower - 'bower install'
 
 ### Server Side 
+- Change directory to the '/server' directory
 - Install Express.js - `npm install express --save`
 - Install Mongoose - `npm install mongoose --save`
 - Install Body-Parser - `npm install body-parser --save`
@@ -22,9 +24,8 @@
 
 
 ## Running the Project Locally 
-
-### Client - ` grunt serve` 
-### Server - `nodemon index.js`
+#### Client - ` grunt serve`  (Change directory to the '/client' directory)
+#### Server - `nodemon index.js` Change directory to the '/server' directory)
 
 ## How to Install and Run MongoDB 
 - Open the Terminal app and type - `brew update`
