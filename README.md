@@ -25,3 +25,13 @@
 
 ### Client - ` grunt serve` 
 ### Server - `nodemon index.js`
+
+## How to Install and Run MongoDB 
+- Open the Terminal app and type - `brew update`
+- Install MongoDB -  `brew install mongodb`
+- Create Directory db - `mkdir -p /data/db`
+- Make sure that the  `/data/db` directory has the right permissions by running
+    > sudo chown -R `id -un` /data/db
+    > # Enter your password
+- Run the Mongo daemon - `mongod` 
+- Reference - http://treehouse.github.io/installation-guides/mac/mongo-mac.html
