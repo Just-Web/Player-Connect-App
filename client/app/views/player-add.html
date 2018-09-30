@@ -1,19 +1,22 @@
-<form role="form">
+<form role="form" name = "playerForm">
         <div class="form-group">
-          <label for="title" class="control-label">Title</label>
-          <input type="text" ng-model="player.name" class="form-control" id="title" placeholder="Enter the Player Name">
+          <label for="title" class="control-label">Name</label>
+          <input type="text" ng-model="player.name" class="form-control" ng-required="true" id="title" placeholder="Enter the Player Name">
         </div>
         <div class="form-group">
           <label for="title" class="control-label">Email</label>
-          <input type="text" ng-model="player.email" class="form-control" id="title" placeholder="Enter Email">
+          <input type="email" name="email" ng-model="player.email" ng-required="true" class="form-control"  type="email" id="title" placeholder="Enter Email">
+          <div ng-show="playerForm.email.$touched && playerForm.email.$invalid">
+            <small>Enter valid email</small>
+          </div>
         </div>
         <div class="form-group">
             <label for="title" class="control-label">Username</label>
-            <input type="text" ng-model="player.username" class="form-control" id="title" placeholder="Enter Username">
+            <input type="text" ng-model="player.username" ng-required="true" class="form-control" id="title" placeholder="Enter Username">
           </div>
           <div class="form-group">
               <label for="title" class="control-label">Password</label>
-              <input type="text" ng-model="player.password" class="form-control" id="title" placeholder="Enter Password">
+              <input type="text" ng-model="player.password" ng-required="true" class="form-control" id="title" placeholder="Enter Password">
           </div>
-        <input type="submit" class="btn btn-primary" ng-click="savePlayer()" value="Save">
+        <input type="submit" class="btn btn-primary" ng-click="savePlayer()" value="Save" ng-disabled="playerForm.$invalid">
       </form>

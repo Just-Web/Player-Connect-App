@@ -25,7 +25,7 @@
 
 ## Running the Project Locally 
 #### Client - ` grunt serve`  (Change directory to the '/client' directory)
-#### Server - `nodemon index.js` Change directory to the '/server' directory)
+#### Server - `nodemon index.js` (Change directory to the '/server' directory)
 
 ## How to Install and Run MongoDB 
 - Open the Terminal app and type - `brew update`
