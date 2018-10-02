@@ -30,9 +30,16 @@ mongoose.connection.once('open', function() {
     _.each(routes, function(controller, route) {
     app.use(route, controller(app, route));
     });
+<<<<<<< HEAD
 
     console.log('Listening on port 3000...');
     app.listen(3000);
+=======
+		const port = process.env.PORT || 9000;
+    app.listen(port, function(){
+      console.log(`listening on port ${port}...`);
+    });
+>>>>>>> 9a29f489d919fc58496b1d11d778f8d44955c4f4
 });
 
 app.use('/hello', function(req, res, next) {
