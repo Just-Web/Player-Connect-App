@@ -52,3 +52,10 @@ app.get('/about', function(req, res) {
 app.get('/home', function(req, res) {
   res.sendFile(path.resolve('../client/app/views/homepage.html'));
 });
+
+//use CORS
+app.use(cors())
+ app.get('/products',  function (req, res, next) {
+app.get('/cors',  function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for a Single Route'})
+})
