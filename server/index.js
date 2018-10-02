@@ -41,8 +41,9 @@ app.use('/hello', function(req, res, next) {
     next();
 });
 
+//use CORS
 app.use(cors())
 
-app.get('/products',  function (req, res, next) {
+app.get('/cors',  function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for a Single Route'})
 })
