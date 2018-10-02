@@ -21,20 +21,35 @@ app.use(function(req, res, next) {
 });
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/playerconnect');
+mongoose.connect("mongodb://localhost/playerconnect", { useNewUrlParser: true });
 mongoose.connection.once('open', function() {
-    app.models = require('./models/index');		
+    app.models = require('./models/index');
 
     // Load the routes.
     var routes = require('./routes');
     _.each(routes, function(controller, route) {
     app.use(route, controller(app, route));
     });
-					
+
     console.log('Listening on port 3000...');
     app.listen(3000);
 });
+
 app.use('/hello', function(req, res, next) {
     res.send('Hello World!');
     next();
 });
+
+
+app.get('/hello1', function(req, res){
+   res.send("Hello World!");
+});
+
+app.post('/hello1', function(req, res){
+   res.send("You just called the post method at '/hello'!\n");
+});
+
+var trys = require('./try.js');
+
+//both index.js and things.js should be in same directory
+app.use('/trys', trys);
