@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var path = require('path');
 var _ = require('lodash');
 
 // Create the application.
@@ -38,4 +39,16 @@ mongoose.connection.once('open', function() {
 app.use('/hello', function(req, res, next) {
     res.send('Hello World!');
     next();
+});
+
+app.get('/', function(req, res) {
+  res.send('Welcome to Player-Connect!!');
+});
+
+app.get('/about', function(req, res) {
+  res.sendFile(path.resolve('../client/app/views/about.html'));
+});
+
+app.get('/home', function(req, res) {
+  res.sendFile(path.resolve('../client/app/views/homepage.html'));
 });
