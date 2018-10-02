@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var path = require('path');
 var _ = require('lodash');
+var cors = require('cors');
 
 // Create the application.
 var app = express();
@@ -55,7 +56,7 @@ app.get('/home', function(req, res) {
 
 //use CORS
 app.use(cors())
- app.get('/products',  function (req, res, next) {
+
 app.get('/cors',  function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for a Single Route'})
 })
