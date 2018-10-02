@@ -17,6 +17,7 @@
 - Install resourcejs - `npm install resourcejs --save`
 - Install method-override - `npm install method-override --save`
 - Install lodash - `npm install lodash --save`
+- Install cors - `npm install cors --save`
 
 ### Setup Environment Variables 
 - export PORT = 5000 (for mac)
