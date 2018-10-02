@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body style ="background-color: skyblue">
+      <h1 style ="font-size:48px; text-transform: uppercase; letter-spacing: 2px; text-align:center;">
+        Welcome to the Profile of ID <%=id%>
+      </h1>
+      <p style="font-size: 16px; text-align:center;">
+        <strong>Age: </strong><%=data.age%>
+      </p>
+      <p style="font-size: 16px; text-align:center;">
+        <strong>Job: </strong><%=data.job%>
+      </p>
+      <h2>hobbies</h2>
+      <ul>
+          <% data.hobbies.forEach(function(item){ %>
+            <li><%= item%></li>
+
+          <% }); %>
+      </ul>
+  </body>
+</html>

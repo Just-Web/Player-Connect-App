@@ -1,3 +1,3 @@
 module.exports = {
-    'player': require('./controllers/PlayerController')
+    'player': require('./controllers/UsersController')
   };
