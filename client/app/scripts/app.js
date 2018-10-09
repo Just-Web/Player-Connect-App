@@ -13,6 +13,7 @@ angular
     'ngRoute',
     'restangular'
   ])
+  .controller('IndexCtrl', ['$scope', function($scope){}])
   .config(function ($routeProvider, RestangularProvider) {
 
     // Set the base URL for Restangular.
