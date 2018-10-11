@@ -15,6 +15,10 @@
     "lodash": "^4.17.11",
     "method-override": "^3.0.0",
     "mongoose": "^5.3.0",
-    "resourcejs": "^1.27.0"
+    "resourcejs": "^1.27.0",
+    "jsonwebtoken": "*",
+    "bcryptjs": "*",
+    "passport": "*",
+    "passport-jwt": "*"
   }
 }

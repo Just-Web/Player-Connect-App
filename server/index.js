@@ -5,13 +5,40 @@ var methodOverride = require('method-override');
 var path = require('path');
 var _ = require('lodash');
 var cors = require('cors');
+var passport = require('passport');
+const bcrypt = require('bcryptjs');
+const config = require('./config/database');
+
+// Connect to database
+mongoose.connect(config.database);
+
+// On Connection
+mongoose.connection.on('connected', function(){
+  console.log('Connected to database '+ config.database);
+});
+
+// On Error
+mongoose.connection.on('error', function(err){
+  console.log('Database error: '+ err);
+});
 
 // Create the application.
-var app = express();
+const app = express();
+
+const user = require('./routes/users');
+
+// Setting port number for backend
+const port = 3000;
+
+//use CORS Middleware
+app.use(cors());
+
+// Set Static Folder
+app.use(express.static(path.join(__dirname, 'client')));
 
 // Add Middleware necessary for REST API's
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // CORS Support
@@ -22,8 +49,10 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use('/user', user);
+
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/playerconnect');
+/*mongoose.connect('mongodb://localhost/playerconnect');
 mongoose.connection.once('open', function() {
     app.models = require('./models/index');
 
@@ -32,11 +61,9 @@ mongoose.connection.once('open', function() {
     _.each(routes, function(controller, route) {
     app.use(route, controller(app, route));
     });
-		const port = process.env.PORT || 3000;
-    app.listen(port, function(){
-      console.log(`listening on port ${port}...`);
-    });
-});
+});*/
+
+//Index Route
 app.use('/hello', function(req, res, next) {
     res.send('Hello World!');
     next();
@@ -54,9 +81,11 @@ app.get('/home', function(req, res) {
   res.sendFile(path.resolve('../client/app/views/homepage.html'));
 });
 
-//use CORS
-app.use(cors())
-
 app.get('/cors',  function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for a Single Route'})
 })
+
+//Initializing port number
+app.listen(port, function(){
+  console.log('Server started on port ' + port);
+});
