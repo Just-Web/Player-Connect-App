@@ -13,13 +13,13 @@ const config = require('./config/database');
 mongoose.connect(config.database);
 
 // On Connection
-mongoose.connection.on('connected', function(){
-  console.log('Connected to database '+ config.database);
+mongoose.connection.on('connected', function() {
+  console.log('Connected to database ' + config.database);
 });
 
 // On Error
-mongoose.connection.on('error', function(err){
-  console.log('Database error: '+ err);
+mongoose.connection.on('error', function(err) {
+  console.log('Database error: ' + err);
 });
 
 // Create the application.
@@ -38,7 +38,9 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 // Add Middleware necessary for REST API's
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // Passport Middleware
@@ -55,7 +57,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use('/user', user);
+app.use('/users', user);
 
 // Connect to MongoDB
 /*mongoose.connect('mongodb://localhost/playerconnect');
@@ -71,8 +73,8 @@ mongoose.connection.once('open', function() {
 
 //Index Route
 app.use('/hello', function(req, res, next) {
-    res.send('Hello World!');
-    next();
+  res.send('Hello World!');
+  next();
 });
 
 app.get('/', function(req, res) {
@@ -87,11 +89,13 @@ app.get('/home', function(req, res) {
   res.sendFile(path.resolve('../client/app/views/homepage.html'));
 });
 
-app.get('/cors',  function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for a Single Route'})
+app.get('/cors', function(req, res, next) {
+  res.json({
+    msg: 'This is CORS-enabled for a Single Route'
+  })
 })
 
 //Initializing port number
-app.listen(port, function(){
+app.listen(port, function() {
   console.log('Server started on port ' + port);
 });
