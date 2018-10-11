@@ -18,6 +18,14 @@
 - Install method-override - `npm install method-override --save`
 - Install lodash - `npm install lodash --save`
 - Install cors - `npm install cors --save`
+## Node Authentication API
+# Usage
+ `npm install`
+ `npm start`
+# End Points
+ `POST /users/register`
+ `POST /users/authenticate              //give back a token`
+ `GET /users/profile                    //Needs json web token to authorize`
 
 ### Setup Environment Variables 
 - export PORT = 5000 (for mac)
@@ -35,3 +43,5 @@
 - Make sure that the  `/data/db` directory has the right permissions by running - sudo chown -R `id -un` /data/db
 - Run the Mongo daemon - `mongod` 
 - Reference - http://treehouse.github.io/installation-guides/mac/mongo-mac.html
+
+
