@@ -20,6 +20,8 @@
 - Install cors - `npm install cors --save`
 
 ### Node Authentication API
+####
+ - Version 1.0.0
 #### Usage
  - `npm install`
  - `npm start`
