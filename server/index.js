@@ -41,6 +41,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
 // CORS Support
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
