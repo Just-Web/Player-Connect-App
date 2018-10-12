@@ -21,12 +21,20 @@ angular
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/homepage.html',
         controller: 'MainCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .when('/register', {
+        templateUrl: 'views/player_register.html',
+        /*controller: ''*/
+      })
+      .when('/login', {
+        /*templateUrl: '',
+        controller: ''*/
       })
       .when('/players', {
         templateUrl: 'views/players.html',
