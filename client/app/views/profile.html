@@ -1,21 +1,100 @@
-<!DOCTYPE html>
-<html>
-  <body style ="background-color: skyblue">
-      <h1 style ="font-size:48px; text-transform: uppercase; letter-spacing: 2px; text-align:center;">
-        Welcome to the Profile of ID <%=id%>
-      </h1>
-      <p style="font-size: 16px; text-align:center;">
-        <strong>Age: </strong><%=data.age%>
-      </p>
-      <p style="font-size: 16px; text-align:center;">
-        <strong>Job: </strong><%=data.job%>
-      </p>
-      <h2>hobbies</h2>
-      <ul>
-          <% data.hobbies.forEach(function(item){ %>
-            <li><%= item%></li>
+<div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-sm-10"><h1>User name</h1></div>
+    	<div class="col-sm-2"><img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+      </div>
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
 
-          <% }); %>
-      </ul>
-  </body>
-</html>
+          <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="http://something.com">something.com</a></div>
+          </div>
+
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul>
+
+          <div class="panel panel-default">
+            <ul class="list-group">
+            <li class="list-group-item text-muted">Social Media <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-left"><a href= "www.facebook.com">Facebook</a> </li>
+            <li class="list-group-item text-left"><a href= "www.twitter.com">Twitter</a> </li>
+          </ul>
+          </div>
+
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <hr>
+                  <form class="form" action="##" method="post" id="profileForm">
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" disabled disabled class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" disabled class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone</h4></label>
+                              <input type="text" disabled class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Mobile</h4></label>
+                              <input type="text" disabled class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-xs-6">
+                           <label for="games"><h4>Games</h4></label>
+                            <input type="text" disabled class="form-control" name="game" id="game" placeholder="enter game number" title="enter your game number if any.">
+                        </div>
+                    </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" disabled class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Location</h4></label>
+                              <input type="text"  disabled class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Send Message</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Go Back</button>
+                            </div>
+                      </div>
+              	</form>
+
+              <hr>
+
+             </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->

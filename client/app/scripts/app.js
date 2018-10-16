@@ -36,6 +36,10 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginController'
       })
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
       .when('/players', {
         templateUrl: 'views/players.html',
         controller: 'PlayersCtrl'
