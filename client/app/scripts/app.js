@@ -33,8 +33,8 @@ angular
         /*controller: ''*/
       })
       .when('/login', {
-        /*templateUrl: '',
-        controller: ''*/
+        templateUrl: 'views/login.html',
+        controller: 'LoginController'
       })
       .when('/players', {
         templateUrl: 'views/players.html',
