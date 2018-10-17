@@ -26,5 +26,8 @@ angular.module('clientApp')
     }, {
       id: 'item5',
       title: 'Players'
+    }, {
+      id: 'item6',
+      title: 'Profile'
     }];
   }]);
