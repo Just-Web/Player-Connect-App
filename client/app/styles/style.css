@@ -7,3 +7,9 @@ input[disabled = "disabled"]{
     opacity: 0.4;
     cursor: not-allowed
 }
+.img-responsive {
+  display: block;
+  width: 80%;
+  height: 250px;
+  align-items: center
+}
