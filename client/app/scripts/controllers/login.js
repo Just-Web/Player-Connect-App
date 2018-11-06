@@ -9,12 +9,13 @@ angular.module('clientApp')
             $scope.dataLoading = true;
             if($scope.username =="test" && $scope.password == "test")
             {
-              console.log("success")
+              console.log("success");
+              $location.path("./../../views/main.html");
             }
             else
             {
               $scope.error = "Invalid User Name OR Password"
-              console.log('fail')
+              console.log('fail');
             }
         };
     }]);
