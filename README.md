@@ -9,13 +9,12 @@
 - Install bower - 'bower install'
 
 ### Client 2 Setup
-## To install all the dependencies 
+## To install all the dependencies, from the client2 folder run: 
 npm install 
 ## Install Bootstrap library for UI
 In client2 folder:
 npm install bootstrap
-In src/styles.css: 
-	`add @import "~bootstrap/dist/css/bootstrap.css";`
+
 ## Run project 
 In client2 folder:
 	`ng serve --open`
