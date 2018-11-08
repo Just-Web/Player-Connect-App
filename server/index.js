@@ -152,7 +152,7 @@ app.get('/about', function(req, res) {
   res.sendFile(path.resolve('../client/app/views/about.html'));
 });
 app.get('/chats', function(req, res) {
-  res.sendFile(path.resolve('../client/app/views/chatbox.html'));
+  res.sendFile(path.resolve('../client/app/views/chatbot.html'));
 });
 
 app.get('/home', function(req, res) {
