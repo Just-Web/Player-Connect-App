@@ -1,1 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+.img-responsive {
+    display: block;
+    width: 50%;
+    height: 250px;
+    align-items: center
+  }
+  
