@@ -14,8 +14,9 @@ import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroSearchComponent }  from './hero-search/hero-search.component';
 import { MessagesComponent }    from './messages/messages.component';
-import { PlayerComponent }      from './player/player.component';
 import { AboutComponent } from './about/about.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
 
 @NgModule({
   imports: [
@@ -38,8 +39,9 @@ import { AboutComponent } from './about/about.component';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
-    PlayerComponent,
-    AboutComponent
+    AboutComponent,
+    ProfilePageComponent,
+    PlayerRegistrationComponent
   ],
   bootstrap: [ AppComponent ]
 })
