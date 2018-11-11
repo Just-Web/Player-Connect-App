@@ -17,6 +17,7 @@ import { MessagesComponent }    from './messages/messages.component';
 import { AboutComponent } from './about/about.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { PlayerRegistrationComponent } from './player-registration/player-regist
     HeroSearchComponent,
     AboutComponent,
     ProfilePageComponent,
-    PlayerRegistrationComponent
+    PlayerRegistrationComponent,
+    LoginComponent
   ],
   bootstrap: [ AppComponent ]
 })
