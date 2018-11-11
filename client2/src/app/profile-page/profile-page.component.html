@@ -1,3 +1,69 @@
-<p>
-  profile-page works!
-</p>
+<!-- <mat-tab-group [@.disabled]="true">
+    <mat-tab label="First"> Content 1 </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>
+   -->
+
+<div class="container player-profile">
+<form method="post">
+    <div class="row">
+      <div class="col-md-4">
+          <div class="profile-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="profile-head">
+            <h5>
+                Kshiti Ghelani
+            </h5>
+            <h6>
+                Gamer
+            </h6>
+            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+            <mat-tab-group [@.disabled]="true" [selectedIndex]="0" md-selected>
+            <mat-tab label="About">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>User Id</label>
+                    </div>
+                    <div class="col-md-9">
+                        <p>Kshiti123</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Name</label>
+                    </div>
+                    <div class="col-md-9">
+                        <p>Test Test</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Games</label>
+                    </div>
+                    <div class="col-md-9">
+                        <p>Counter Strike</p>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Reviews" > 
+                <mat-card class="card">
+                  <mat-card-title>Shiba Inu</mat-card-title>
+                  <mat-card-content>
+                    <p>
+                      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                      bred for hunting.
+                    </p>
+                  </mat-card-content>
+                </mat-card>
+            </mat-tab>
+            </mat-tab-group>
+          </div>
+      </div>
+    </div>
+</form>
+</div>

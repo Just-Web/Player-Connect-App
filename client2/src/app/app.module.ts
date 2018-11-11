@@ -2,6 +2,8 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
+import {MatTabsModule, MatCardModule }    from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -25,7 +27,9 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-
+    MatTabsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
