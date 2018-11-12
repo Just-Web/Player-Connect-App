@@ -20,6 +20,7 @@ import { AboutComponent } from './about/about.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
 import { LoginComponent } from './login/login.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { LoginComponent } from './login/login.component';
     AboutComponent,
     ProfilePageComponent,
     PlayerRegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    ChatComponent
   ],
   bootstrap: [ AppComponent ]
 })
