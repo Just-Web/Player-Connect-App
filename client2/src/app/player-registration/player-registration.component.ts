@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ValidateService} from '../services/validate.service';
+import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 //import {FlashMessagesService} from 'angular2-flash-messages';
 
 
@@ -16,7 +18,10 @@ export class PlayerRegistrationComponent implements OnInit {
 
 
 
-  constructor(private validateService: ValidateService) { }
+  constructor(
+    private validateService: ValidateService,
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -35,12 +40,20 @@ export class PlayerRegistrationComponent implements OnInit {
       return false;
     }
 
+    //Validate Email
     if(!this.validateService.validateEmail(user.email)){
       console.log('Please use valid email');
       return false;
     }
+
+    //Register User
+    this.authService.registerUser(user).subscribe(data=>{
+      if(data.success){
+        console.log('Registered success');
+      } else{
+        console.log('Something went wrong');
+      }
+    });
+
   }
-
-
-
 }

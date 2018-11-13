@@ -2,6 +2,7 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import {MatTabsModule, MatCardModule }    from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router'
@@ -25,7 +26,9 @@ import { ChatComponent } from './chat/chat.component';
 import { HomeComponent } from './home/home.component';
 
 import {ValidateService} from './services/validate.service';
+import {AuthService} from './services/auth.service';
 //import {FlashMessagesModule} from 'angular2-flash-messages';
+
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -44,6 +47,7 @@ const appRoutes: Routes = [
     MatTabsModule,
     BrowserAnimationsModule,
     MatCardModule,
+    HttpModule,
   //  FlashMessagesModule,
   //  RouterModule.forRoot(appRoutes),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
@@ -67,7 +71,7 @@ const appRoutes: Routes = [
     ChatComponent,
     HomeComponent
   ],
-  providers: [ValidateService],
+  providers: [ValidateService, AuthService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
