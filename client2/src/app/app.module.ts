@@ -4,6 +4,7 @@ import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import {MatTabsModule, MatCardModule }    from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule, Routes} from '@angular/router'
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -21,6 +22,18 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { PlayerRegistrationComponent } from './player-registration/player-registration.component';
 import { LoginComponent } from './login/login.component';
 import { ChatComponent } from './chat/chat.component';
+import { HomeComponent } from './home/home.component';
+
+import {ValidateService} from './services/validate.service';
+//import {FlashMessagesModule} from 'angular2-flash-messages';
+
+const appRoutes: Routes = [
+  {path:'', component: HomeComponent},
+  {path:'register', component:PlayerRegistrationComponent},
+  {path:'login', component: LoginComponent},
+  {path:'dashboard', component: DashboardComponent},
+  {path:'profile', component: ProfilePageComponent}
+]
 
 @NgModule({
   imports: [
@@ -31,6 +44,8 @@ import { ChatComponent } from './chat/chat.component';
     MatTabsModule,
     BrowserAnimationsModule,
     MatCardModule,
+  //  FlashMessagesModule,
+  //  RouterModule.forRoot(appRoutes),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -49,8 +64,10 @@ import { ChatComponent } from './chat/chat.component';
     ProfilePageComponent,
     PlayerRegistrationComponent,
     LoginComponent,
-    ChatComponent
+    ChatComponent,
+    HomeComponent
   ],
+  providers: [ValidateService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
