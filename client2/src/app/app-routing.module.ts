@@ -8,7 +8,8 @@ import { AboutComponent }  from './about/about.component';
 import { PlayerRegistrationComponent }  from './player-registration/player-registration.component';
 import { ProfilePageComponent }  from './profile-page/profile-page.component';
 import { LoginComponent }  from './login/login.component';
-import { ChatComponent }  from './chat/chat.component';
+import { ChatComponent }  from './chat/chat.component'; 
+import {RegistrationComponent} from './registration/registration.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'player_registration', component: PlayerRegistrationComponent},
   { path: 'profile', component: ProfilePageComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'chat', component: ChatComponent}
+  { path: 'chat', component: ChatComponent},
+  { path: 'registration', component: RegistrationComponent}
 
 ];
 

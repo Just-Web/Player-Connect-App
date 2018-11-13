@@ -27,6 +27,7 @@ import { HomeComponent } from './home/home.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
+import { RegistrationComponent } from './registration/registration.component';
 //import {FlashMessagesModule} from 'angular2-flash-messages';
 
 
@@ -69,7 +70,8 @@ const appRoutes: Routes = [
     PlayerRegistrationComponent,
     LoginComponent,
     ChatComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrationComponent
   ],
   providers: [ValidateService, AuthService],
   bootstrap: [ AppComponent ]
