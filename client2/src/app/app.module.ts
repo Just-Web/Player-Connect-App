@@ -5,7 +5,9 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import {MatTabsModule, MatCardModule }    from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {RouterModule, Routes} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -49,6 +51,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatCardModule,
     HttpModule,
+    ReactiveFormsModule,
   //  FlashMessagesModule,
   //  RouterModule.forRoot(appRoutes),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
