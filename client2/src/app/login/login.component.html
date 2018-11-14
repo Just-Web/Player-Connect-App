@@ -14,21 +14,19 @@
 						<div class="row align-content-center">
                             <div class="col-lg-3" ></div>
 							<div class="col-lg-6 align-content-center">
-								<form id="login-form" role="form" style="display: block;">
+								<form id="login-form" role="form" style="display: block;" >
+                  <form (submit)="onLoginSubmit()">
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<input type="text" [(ngModel)]="username" name="username"  class="form-control" placeholder="Username">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
 									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In" [routerLink]="['/dashboard']">
-											</div>
-										</div>
-									</div>
+
+									<input type="submit"  class="form-control btn btn-login" value="Log In" >
+
                                 </form>
+                              </form>
                         </div>
                         <div class="col-lg-3" ></div>
 					</div>

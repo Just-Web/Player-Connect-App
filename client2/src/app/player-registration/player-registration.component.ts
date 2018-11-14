@@ -50,8 +50,10 @@ export class PlayerRegistrationComponent implements OnInit {
     this.authService.registerUser(user).subscribe(data=>{
       if(data.success){
         console.log('Registered success');
+        this.router.navigate(['/login']);
       } else{
         console.log('Something went wrong');
+        this.router.navigate(['/player_registration']);
       }
     });
 
