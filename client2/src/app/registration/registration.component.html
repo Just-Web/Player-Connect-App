@@ -13,52 +13,33 @@
                   <div class="row register-form">
                       <div class="col-md-6">
                           <div class="form-group">
-                            <!-- <input type="text" class="form-control" placeholder="First Name *" value="" required ngControl="first_name" /> -->
+                            <input type="text" class="form-control" placeholder="Full Name *" value="" required ngControl="Full_name" />
                           </div>
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Last Name *" value="" required #last_name />
+                            <input type="text" class="form-control"  placeholder="Username *" value="" required #username/>
+                         </div>
+                          <div class="form-group">
+                              <input type="password" class="form-control"  placeholder="Password *" value="" required #password/>
                           </div>
                           <div class="form-group">
-                              <input type="password" class="form-control" placeholder="Password *" value="" required #password/>
-                          </div>
-                          <div class="form-group">
-                              <input type="password" class="form-control"  placeholder="Confirm Password *" value="" required #conformed_password/>
-                          </div>
+                            <input type="text" class="form-control" placeholder="Social Netwoking Sites" value="" required #social_sites/>
+                        </div>
                       </div>
                        <div class="col-md-6">
                           <div class="form-group">
                               <input type="email" class="form-control" placeholder="Your Email *" value="" />
                           </div>
                           <div class="form-group">
-                              <input type="text" minlength="10" maxlength="10" name="txtPhone" class="form-control" placeholder="Your Phone *" value="" required #phone/>
-                          </div>
-                          <div class="form-group">
-                              <select class="form-control" required #security_question>
-                                  <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                  <option>What is your Birthdate?</option>
-                                  <option>What is Your old Phone Number</option>
-                                  <option>What is your Pet Name?</option>
-                              </select>
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" required #security_answer/>
-                          </div>
+                            <input type="file" class="form-control" placeholder="Profile Picture *" value=""  required #profile_pic/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="What Games Do You Play?" value="" required #games/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control"  placeholder="A Word that describe you most" value="" required #word/>
+                        </div>
                       </div>
                       <div class="col-md-6">
-                          <div class="form-group">
-                              <input type="file" class="form-control" placeholder="Profile Picture *" value=""  required #profile_pic/>
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="What Games Do You Play?" value="" required #games/>
-                          </div>
-                        </div>
-                      <div class="col-md-6">
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Social Netwoking Sites" value="" required #social_sites/>
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control"  placeholder="A Word that describe you most" value="" required #word/>
-                          </div>
                           <button type="submit" class="btn btn-success">Submit</button>
                           <button type="button" class="btn btn-default" id= "close">Close</button>
                         </div>
