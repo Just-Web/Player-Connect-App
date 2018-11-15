@@ -11,9 +11,12 @@
 ### Client 2 Setup
 ## To install all the dependencies, from the client2 folder run: 
 npm install 
-## Run project 
+## Run project locally: 
 In client2 folder:
 	`ng serve --open`
+## Run Project on EC2 instance : 
+`ng serve --host=0.0.0.0 --disable-host-check` 
+Refer : https://github.com/angular/angular-cli/issues/2542
 
 ### Server Side 
 - Change directory to the '/server' directory

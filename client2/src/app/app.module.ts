@@ -5,7 +5,9 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import {MatTabsModule, MatCardModule }    from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {RouterModule, Routes} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -27,6 +29,7 @@ import { HomeComponent } from './home/home.component';
 
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
+import { RegistrationComponent } from './registration/registration.component';
 //import {FlashMessagesModule} from 'angular2-flash-messages';
 
 
@@ -48,6 +51,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatCardModule,
     HttpModule,
+    ReactiveFormsModule,
   //  FlashMessagesModule,
   //  RouterModule.forRoot(appRoutes),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
@@ -69,7 +73,8 @@ const appRoutes: Routes = [
     PlayerRegistrationComponent,
     LoginComponent,
     ChatComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrationComponent
   ],
   providers: [ValidateService, AuthService],
   bootstrap: [ AppComponent ]

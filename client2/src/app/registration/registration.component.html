@@ -1,0 +1,71 @@
+<div class="container register">
+  <div class="row">
+      <div class="col-md-3 register-left">
+          <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+          <h3>Welcome to <br>Player Connect</h3>
+          <input type="submit" name="" value="Login" [routerLink]="['/login']" /><br/>
+      </div>
+      <div class="col-md-9 register-right">
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <h3 class="register-heading">Player Registration Form</h3>
+                  <form>
+                  <div class="row register-form">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <!-- <input type="text" class="form-control" placeholder="First Name *" value="" required ngControl="first_name" /> -->
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Last Name *" value="" required #last_name />
+                          </div>
+                          <div class="form-group">
+                              <input type="password" class="form-control" placeholder="Password *" value="" required #password/>
+                          </div>
+                          <div class="form-group">
+                              <input type="password" class="form-control"  placeholder="Confirm Password *" value="" required #conformed_password/>
+                          </div>
+                      </div>
+                       <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                          </div>
+                          <div class="form-group">
+                              <input type="text" minlength="10" maxlength="10" name="txtPhone" class="form-control" placeholder="Your Phone *" value="" required #phone/>
+                          </div>
+                          <div class="form-group">
+                              <select class="form-control" required #security_question>
+                                  <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                                  <option>What is your Birthdate?</option>
+                                  <option>What is Your old Phone Number</option>
+                                  <option>What is your Pet Name?</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" required #security_answer/>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="file" class="form-control" placeholder="Profile Picture *" value=""  required #profile_pic/>
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="What Games Do You Play?" value="" required #games/>
+                          </div>
+                        </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Social Netwoking Sites" value="" required #social_sites/>
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control"  placeholder="A Word that describe you most" value="" required #word/>
+                          </div>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                          <button type="button" class="btn btn-default" id= "close">Close</button>
+                        </div>
+                  </div>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
