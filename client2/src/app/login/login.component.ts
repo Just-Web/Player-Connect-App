@@ -13,6 +13,8 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   username: String;
   password: String;
+  loading = false;
+  success = true;
 
   constructor(
     private authService:AuthService,
@@ -23,7 +25,8 @@ export class LoginComponent implements OnInit {
 
   onLoginSubmit(){
     // create an Object
-
+    this.success = false;
+    this.loading = true;
     const user={
       username: this.username,
       password: this.password
@@ -33,12 +36,14 @@ export class LoginComponent implements OnInit {
       if(data.success){
         this.authService.storeUserData(data.token, data.user);
         console.log("Logged in");
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['/dashboard']);
+        this.success = data.success;
       }else{
         console.log(data.msg);
         this.router.navigate(['login']);
+            this.loading = false;
+            this.success = data.success;
       }
     });
   }
-
 }
