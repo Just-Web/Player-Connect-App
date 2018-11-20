@@ -10,6 +10,7 @@ import { ProfilePageComponent }  from './profile-page/profile-page.component';
 import { LoginComponent }  from './login/login.component';
 import { ChatComponent }  from './chat/chat.component';
 import {RegistrationComponent} from './registration/registration.component';
+import {ProfilecardComponent} from './profilecard/profilecard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'profile/:username', component: ProfilePageComponent},
   { path: 'login', component: LoginComponent},
   { path: 'chat', component: ChatComponent},
-  { path: 'registration', component: RegistrationComponent}
+  { path: 'registration', component: RegistrationComponent},
+  { path: 'profile_card/:username', component: ProfilecardComponent}
 
 ];
 
