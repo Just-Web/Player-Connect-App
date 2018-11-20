@@ -19,7 +19,20 @@ const UserSchema = mongoose.Schema({
   password:{
     type: String,
     required: true
+  },
+  socialsite:{
+    type: String,
+    required: true
+  },
+  game:{
+    type: String,
+    required: true
+  },
+  describe:{
+    type: String,
+    required: true
   }
+
 });
 
 // Export the model.
