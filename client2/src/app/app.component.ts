@@ -14,14 +14,18 @@ export class AppComponent {
     private router: Router
     ) { }
   title = 'Tour of Heroes';
-  onLogout(){
+  onRegisterSubmit(){
+    const user={}
+    //Register User
     this.authService.logout().subscribe(data=>{
       if(data.success){
-        console.log('Logout success');
-        this.router.navigate(['/registration']);
+        console.log('Registered success');
+        this.router.navigate(['/dashboard']);
       } else{
         console.log('Something went wrong');
+       // this.router.navigate(['/player_registration']);
       }
     });
+
   }
 }

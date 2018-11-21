@@ -1,52 +1,52 @@
 <div class="container register">
-  <div class="row">
-      <div class="col-md-3 register-left">
-          <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-          <h3>Welcome to <br>Player Connect</h3>
-          <input type="submit" name="" value="Login" [routerLink]="['/login']" /><br/>
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <h3>Welcome to <br>Player Connect</h3>
+                <input type="submit" name="" value="Login" [routerLink]="['/login']" /><br/>
+            </div>
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Player Registration Form</h3>
+                        <form (submit)="onRegisterSubmit()">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                  <input type="text" [(ngModel)]="name" name="name"  class="form-control" placeholder="Full Name *"  />
+                                </div>
+                                <div class="form-group">
+                                  <input type="text"  [(ngModel)]="username" name="username"  class="form-control"  placeholder="Username *"/>
+                               </div>
+                                <div class="form-group">
+                                    <input type="password"  [(ngModel)]="password" name="password"    class="form-control"  placeholder="Password *" />
+                                </div>
+                                <div class="form-group">
+                                  <input type="text"  [(ngModel)]="socialsites" name="socialsites"  class="form-control" placeholder="Social Netwoking Sites"/>
+                              </div>
+                            </div>
+                             <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" [(ngModel)]="email" name="email"  class="form-control" placeholder="Your Email *"/>
+                                </div>
+                                <!-- <div class="form-group">
+                                  <input type="file"  class="form-control" placeholder="Profile Picture *" />
+                              </div> -->
+                              <div class="form-group">
+                                  <input type="text" [(ngModel)]="games" name="games"  class="form-control" placeholder="What Games Do You Play?" />
+                              </div>
+                              <div class="form-group">
+                                  <input type="text"  [(ngModel)]="description" name="description" class="form-control"  placeholder="A Word that describe you most"/>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="button" class="btn btn-default" id= "close">Close</button>
+                              </div>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
-      <div class="col-md-9 register-right">
-          <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <h3 class="register-heading">Player Registration Form</h3>
-                  <form (submit)="onRegisterSubmit()">
-                  <div class="row register-form">
-                      <div class="col-md-6">
-                          <div class="form-group">
-                            <input type="text" [(ngModel)]="name" name="name"  class="form-control" placeholder="Full Name *"  />
-                          </div>
-                          <div class="form-group">
-                            <input type="text"  [(ngModel)]="username" name="username"  class="form-control"  placeholder="Username *"/>
-                         </div>
-                          <div class="form-group">
-                              <input type="password"  [(ngModel)]="password" name="password"    class="form-control"  placeholder="Password *" />
-                          </div>
-                          <div class="form-group">
-                            <input type="text"  [(ngModel)]="socialsites" name="socialsites"  class="form-control" placeholder="Social Netwoking Sites"/>
-                        </div>
-                      </div>
-                       <div class="col-md-6">
-                          <div class="form-group">
-                              <input type="email" [(ngModel)]="email" name="email"  class="form-control" placeholder="Your Email *"/>
-                          </div>
-                          <!-- <div class="form-group">
-                            <input type="file"  class="form-control" placeholder="Profile Picture *" />
-                        </div> -->
-                        <div class="form-group">
-                            <input type="text" [(ngModel)]="games" name="games"  class="form-control" placeholder="What Games Do You Play?" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text"  [(ngModel)]="description" name="description" class="form-control"  placeholder="A Word that describe you most"/>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                          <button type="submit" class="btn btn-success">Submit</button>
-                          <button type="button" class="btn btn-default" id= "close">Close</button>
-                        </div>
-                  </div>
-                </form>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
