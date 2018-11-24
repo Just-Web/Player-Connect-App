@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {ValidateService} from '../services/validate.service';
+import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile-page',
@@ -9,7 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 export class ProfilePageComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private validateService: ValidateService,
+      private authService: AuthService,
+      private router: Router
   ) { }
   // TEMPORARY using a string to store username grabbed from URL
   // AFTER BACKEND INTEGRATION have a User or Player data member
