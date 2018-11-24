@@ -10,12 +10,12 @@ import {Router} from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
   name: String;
-  username: String;
   email: String;
+  username: String;
   password: String;
-  socialsites: String;
-  games : String;
-  description: String;
+  socialsite: String;
+  game: String;
+  describe: String;
 
   constructor(private validateService: ValidateService,
     private authService: AuthService,
@@ -29,9 +29,9 @@ export class RegistrationComponent implements OnInit {
       email: this.email,
       username: this.username,
       password: this.password,
-      socialsites: this.socialsites,
-      games : this.games,
-      description: this.description
+      socialsite: this.socialsite,
+      game: this.game,
+      describe: this.describe
     }
     //Register User
     this.authService.registerUser(user).subscribe(data=>{
