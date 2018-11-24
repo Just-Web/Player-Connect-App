@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {AuthService} from './services/auth.service';
 import {Router} from '@angular/router';
+import {ValidateService} from './services/validate.service';
 
 @Component({
   selector: 'app-root',
@@ -9,23 +10,20 @@ import {Router} from '@angular/router';
 })
 
 export class AppComponent {
-  constructor(
+  constructor(private validateService: ValidateService,
     private authService: AuthService,
     private router: Router
     ) { }
+
   title = 'Tour of Heroes';
-  onRegisterSubmit(){
+
+
+  onLogoutSubmit(){
     const user={}
     //Register User
-    this.authService.logout().subscribe(data=>{
-      if(data.success){
-        console.log('Registered success');
-        this.router.navigate(['/dashboard']);
-      } else{
-        console.log('Something went wrong');
-       // this.router.navigate(['/player_registration']);
-      }
-    });
+    this.authService.logout();
+    console.log('Logged out success');
+    this.router.navigate(['/dashboard']);
 
   }
 }
