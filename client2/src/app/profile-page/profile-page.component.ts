@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./profile-page.component.css']
 })
 export class ProfilePageComponent implements OnInit {
-
+  user:Object;
   constructor(
     private route: ActivatedRoute,
     private validateService: ValidateService,
@@ -24,6 +24,14 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit() {
     // Grab username from URL and store in data member
     this.username = this.route.snapshot.paramMap.get('username');
+
+    this.authService.getProfile().subscribe(profile =>{
+      this.user=profile.user;
+    },
+    err=>{
+      console.log(err);
+      return false;
+    });
 
     // Call a service which sends GET request to backend to look for user's info
     // Add error catching if user does not exist

@@ -13,7 +13,7 @@
             <img src="assets/images/profile.jpg" alt=""/>
           </div>
       </div>
-      <div class="col-md-6">
+      <div *ngIf="user" class="col-md-6">
           <div class="profile-head">
             <h5>
                 {{username}}
@@ -29,7 +29,7 @@
                         <label>User Id</label>
                     </div>
                     <div class="col-md-9">
-                        <p>Kshiti123</p>
+                        <p>{{user.username}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -37,7 +37,7 @@
                         <label>Name</label>
                     </div>
                     <div class="col-md-9">
-                        <p>Test Test</p>
+                        <p>{{user.name}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -45,7 +45,7 @@
                         <label>Games</label>
                     </div>
                     <div class="col-md-9">
-                        <p>Counter Strike</p>
+                        <p>{{user.game}}</p>
                     </div>
                 </div>
             </mat-tab>

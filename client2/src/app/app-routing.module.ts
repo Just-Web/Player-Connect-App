@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'chat', component: ChatComponent},
   { path: 'registration', component: RegistrationComponent},
-  { path: 'profile_card/:username', component: ProfilecardComponent}
+  { path: 'profile_card/:username', component: ProfilecardComponent},
+  { path: 'profile', component: ProfilePageComponent}
 
 ];
 
