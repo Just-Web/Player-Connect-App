@@ -41,8 +41,11 @@
                             </div>
                             <div class="col-md-6">
                                 <button type="submit" class="btn btn-success">Submit</button>
-                                <button type="button" class="btn btn-default" id= "close">Close</button>
+                                <!--<button type="button" class="btn btn-default" id= "close">Close</button>-->
                               </div>
+                              <div *ngIf="!filledCorrectly" class="alert alert-danger">
+              										Please fill in all required fields: Name, Username, Email, Password
+              								</div>
                         </div>
                       </form>
                     </div>

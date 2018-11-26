@@ -17,12 +17,13 @@ export class RegistrationComponent implements OnInit {
   game: String;
   describe: String;
 
+  filledCorrectly: boolean;
+
   constructor(private validateService: ValidateService,
     private authService: AuthService,
     private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {this.filledCorrectly = true;}
   onRegisterSubmit(){
     const user={
       name: this.name,
@@ -33,12 +34,20 @@ export class RegistrationComponent implements OnInit {
       game: this.game,
       describe: this.describe
     }
+
+    //Check nonrequired fields, revert to default N/A if not filled
+    if(user.socialsite == undefined){user.socialsite = 'N/A';}
+    if(user.game == undefined){user.game = 'N/A';}
+    if(user.describe == undefined){user.describe = 'N/A';}
+
     //Register User
     this.authService.registerUser(user).subscribe(data=>{
       if(data.success){
+        this.filledCorrectly = true;
         console.log('Registered success');
         this.router.navigate(['/dashboard']);
       } else{
+        if(!this.validateService.validateRegister(user)){this.filledCorrectly = false;}
         console.log('Something went wrong');
        // this.router.navigate(['/player_registration']);
       }
