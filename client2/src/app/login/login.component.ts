@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
+import {AppComponent} from '../app.component';
 
 
 
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService:AuthService,
-    private router:Router) { }
+    private router:Router,
+    private appComponent:AppComponent) { }
 
   ngOnInit() {
   }
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit {
       if(data.success){
         this.authService.storeUserData(data.token, data.user);
         console.log("Logged in");
+        this.appComponent.setLoggedInUser();
         this.router.navigate(['/dashboard']);
         this.success = data.success;
       }else{

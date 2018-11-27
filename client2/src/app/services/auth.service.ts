@@ -48,6 +48,11 @@ export class AuthService {
 
   }
 
+  loadUser(){
+    const user = localStorage.getItem('user');
+    return user; //will this work?
+  }
+
   logout(){
     this.authToken = null;
     this.user = null;

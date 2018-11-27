@@ -15,15 +15,29 @@ export class AppComponent {
     private router: Router
     ) { }
 
-  title = 'Tour of Heroes';
+  title = 'Player Connect';
+  // DATA MEMBER WHICH RETRIEVES LOCAL STORAGE USERNAME
+  loggedInUser: string;
 
+  ngOnInit(){
+    if(this.authService.loadUser() == null){
+      this.loggedInUser='Please Register or Login!';
+    }
+    else{
+      this.setLoggedInUser();
+    }
+  }
+
+  setLoggedInUser(){
+    const userData=JSON.parse(this.authService.loadUser());
+    this.loggedInUser=userData.username;
+  }
 
   onLogoutSubmit(){
     const user={}
-    //Register User
+    console.log(this.authService.loadUser());
     this.authService.logout();
     console.log('Logged out success');
     this.router.navigate(['/dashboard']);
-
   }
 }

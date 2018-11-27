@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
       if(data.success){
         this.filledCorrectly = true;
         console.log('Registered success');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/login']);
       } else{
         if(!this.validateService.validateRegister(user)){this.filledCorrectly = false;}
         console.log('Something went wrong');
