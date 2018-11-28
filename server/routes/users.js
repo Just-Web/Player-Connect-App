@@ -71,6 +71,15 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), function(r
   res.json({user:req.user});
 });
 
+router.get('/all', function(req, res){
+  User.find({}, function(err, docs){
+    if (err) throw err;
+    else res.json({
+      users : docs
+    });
+  });
+});
+
 router.get('/:username', function(req, res){
   User.getUserByUsername(req.params.username, function(err, user){
     if(err) throw err;
