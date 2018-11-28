@@ -12,10 +12,10 @@ export class AuthService {
   constructor(private http: Http) { }
 
   //reach into backed URI and register user
-  registerUser(user){
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-      return this.http.post('http://localhost:3000/users/register', user,{headers: headers})
+  registerUser(fd){
+   // let headers = new Headers();
+   // headers.append('Content-Type','application/json');
+      return this.http.post('http://localhost:3000/users/register', fd)
       .pipe(map(res => res.json()));
   }
 
@@ -32,6 +32,14 @@ export class AuthService {
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type','application/json');
     return this.http.get('http://localhost:3000/users/profile', {headers: headers})
+      .pipe(map(res => res.json()));
+  }
+  getAllProfiles(){
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type','application/json');
+    return this.http.get('http://localhost:3000/home', {headers: headers})
       .pipe(map(res => res.json()));
   }
 
