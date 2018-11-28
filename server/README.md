@@ -24,3 +24,6 @@ Body :
 ## Get all the users profiles : GET - /users/profile
 Header: 
 ```Authorization : token```
+
+## Get all the specific user profiles : GET - /users/:username
+
