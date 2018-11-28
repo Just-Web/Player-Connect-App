@@ -170,21 +170,6 @@ app.get('/home', function(req, res) {
   });
 });
 
-app.get('/profile/:username', function(req,res){
-  var MongoClient = require('mongodb').MongoClient;
-  var url = "mongodb://localhost:27017/";
-
-  MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("playerconnect");
-  dbo.collection("users").find({username:req.params.username }, { projection: { _id: 0, name: 1, email:1, username:1, socialsite:1, game:1, describe:1 } }).toArray(function(err, result) {
-    if (err) throw err;
-    res.json(result);
-    db.close();
-  });
-  });
-});
-
 
 app.get('/cors', function(req, res, next) {
   res.json({
