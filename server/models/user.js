@@ -28,6 +28,10 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  // rank:{
+  //   type: Double,
+  //   required: false
+  // },
   describe:{
     type: String,
     required: true
