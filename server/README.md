@@ -25,5 +25,18 @@ Body :
 Header: 
 ```Authorization : token```
 
-## Get all the specific user profiles : GET - /users/:username
+## Get the specific user profiles : GET - /users/:username
+```http://localhost:3000/users/:username```
+
+Body : 
+```
+{
+	  "name":"abcccc",
+          "username":"123456"
+	  "email":"abcccc",
+          "games":"123456"
+	  "socialsite":"abcccc",
+          "describe":"123456"
+}
+```
 
