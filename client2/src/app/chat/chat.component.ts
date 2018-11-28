@@ -1,5 +1,5 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
-import { ChatService } from '../chat.service';
+import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -11,11 +11,13 @@ export class ChatComponent implements OnInit, OnDestroy {
   messages = [];
   connection;
   message;
+  name;
 
   constructor(private chatService:ChatService) {}
 
   sendMessage(){
     this.chatService.sendMessage(this.message);
+    this.name='';
     this.message = '';
   }
 
