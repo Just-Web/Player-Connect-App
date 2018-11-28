@@ -1,4 +1,4 @@
-<p>
+<!-- <p>
   profilecard works!
  
 </p>
@@ -14,4 +14,45 @@
     <a href="#"><i class="fa fa-facebook"></i></a> 
  </div>
  <p><button>Contact</button></p>
+</div> -->
+<mat-form-field class="search-form">
+  <input matInput placeholder="Search Picture" type="text">
+</mat-form-field>
+<button button="submit" mat-raised-button color="primary">Search</button>
+<br>
+
+<!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <mat-card class="card-picture" *ngFor="let player of players">
+    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+      <span fxFlex="80%">{{player.name}}</span>
+      <span fxFlex="80%">{{player.username}}</span>
+      <mat-icon fxFlex="10%">chat</mat-icon>
+      <mat-icon fxFlex="10%">delete</mat-icon>
+    </mat-card-title>
+    <img mat-card-image src="assets/images/profile.jpg">
+  </mat-card>
+</div> -->
+
+<div class="row">
+  <div *ngFor="let player of players" class="col-3 card">
+      <div class="card-block">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{player.name}}</mat-card-title>
+            <mat-card-subtitle>{{player.username}}</mat-card-subtitle>
+            <mat-card-actions>
+              <mat-icon fxFlex="10%">chat</mat-icon>
+            </mat-card-actions>
+          </mat-card-header>
+          <img mat-card-image src="assets/images/profile.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              {{player.describe}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  </div>
 </div>
+
