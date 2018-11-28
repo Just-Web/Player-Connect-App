@@ -1,7 +1,10 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {ValidateService} from '../services/validate.service';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
+import {Http} from '@angular/http';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-registration',
@@ -16,15 +19,18 @@ export class RegistrationComponent implements OnInit {
   socialsite: String;
   game: String;
   describe: String;
-
+  userImage: File;
+  
   filledCorrectly: boolean;
 
   constructor(private validateService: ValidateService,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private http: Http) { }
 
   ngOnInit() {this.filledCorrectly = true;}
   onRegisterSubmit(){
+  console.log(this.userImage);
     const user={
       name: this.name,
       email: this.email,
@@ -32,7 +38,8 @@ export class RegistrationComponent implements OnInit {
       password: this.password,
       socialsite: this.socialsite,
       game: this.game,
-      describe: this.describe
+      describe: this.describe,   
+      userImage : this.userImage   
     }
 
     //Check nonrequired fields, revert to default N/A if not filled
@@ -53,5 +60,10 @@ export class RegistrationComponent implements OnInit {
       }
     });
 
+  }
+  onFileChange(event) {    
+    let files = event.target.files[0].name;
+    console.log(files);
+    this.userImage = files;
   }
 }

@@ -4,11 +4,21 @@ const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database')
-
 const User = require('../models/user');
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './uploads/');
+  },
+  filename: function(req, file, cb) {
+    cb(null, new Date().toISOString() + file.originalname);
+  }
+});
+const upload = multer({storage:storage});
 
 // Register
-router.post('/register', function (req, res, next){
+router.post('/register', upload.single('userImage') ,function (req, res, next){
+  console.log(req.body );
   let newUser = new User({
     name: req.body.name,
     email: req.body.email,
@@ -16,12 +26,14 @@ router.post('/register', function (req, res, next){
     password: req.body.password,
     socialsite: req.body.socialsite,
     game: req.body.game,
-    describe: req.body.describe
+    describe: req.body.describe,
+    userImage:req.file.path 
   });
 
   User.addUser(newUser, function(err, user){
     if(err){
-      res.json({success: false, msg:'Failed to register user'});
+      
+      res.json({success: false, msg:'Failed to register user' + err});
     } else{
       res.json({success: true, msg:'User registered'});
     }
@@ -56,7 +68,9 @@ router.post('/authenticate', function(req,res,next){
             email: user.email,
             socialsite: user.socialsite,
             game: user.game,
-            describe: user.describe
+            describe: user.describe,
+            userImage:user.userImage
+
           }
         });
       } else {
@@ -89,7 +103,8 @@ router.get('/:username', function(req, res){
           email: user.email,
           socialsite: user.socialsite,
           game: user.game,
-          describe: user.describe
+          describe: user.describe,
+          userImage:user.userImage
           }
       });
     }
