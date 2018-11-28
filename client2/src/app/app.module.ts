@@ -3,7 +3,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import {MatTabsModule, MatCardModule }    from '@angular/material';
+import { MatCardModule,MatTabsModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -31,8 +31,7 @@ import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfilecardComponent } from './profilecard/profilecard.component';
-//import {FlashMessagesModule} from 'angular2-flash-messages';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -53,6 +52,15 @@ const appRoutes: Routes = [
     MatCardModule,
     HttpModule,
     ReactiveFormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule,
   //  FlashMessagesModule,
   //  RouterModule.forRoot(appRoutes),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
