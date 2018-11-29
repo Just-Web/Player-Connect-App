@@ -8,9 +8,9 @@ var cors = require('cors');
 var passport = require('passport');
 
 
-let app = express();
-let http = require('http').Server(app);
-let io = require('socket.io')(http);
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 const bcrypt = require('bcryptjs');
 const config = require('./config/database');
@@ -26,24 +26,23 @@ mongoose.connect(config.database, function(err, db){
         throw err;
     }
 
-    console.log('MongoDB connected...');
-    io.on('connection', (socket) => {
-    console.log('user connected');
+  //   console.log('MongoDB connected...');
+  //   io.on('connection', (socket) => {
+  //   console.log('user connected');
+  //
+  //   socket.on('disconnect', function(){
+  //     console.log('user disconnected');
+  //   });
+  //
+  //   socket.on('add-message', (message) => {
+  //     io.emit('message', {type:'new-message', text: message});
+  //   });
+  // });
+  //
+  // http.listen(5000, () => {
+  //   console.log('started on port 5000');
+  // });
 
-    socket.on('disconnect', function(){
-      console.log('user disconnected');
-    });
-
-    socket.on('add-message', (message) => {
-      io.emit('message', {type:'new-message', text: message});
-    });
-  });
-
-  http.listen(5000, () => {
-    console.log('started on port 5000');
-  });
-
-    /*
     // Connect to Socket.io
     client.on('connection', function(socket){
         let chat = db.collection('chats');
@@ -94,7 +93,7 @@ mongoose.connect(config.database, function(err, db){
                 socket.emit('cleared');
             });
         });
-    }); */
+    });
 });
 
 // On Connection
