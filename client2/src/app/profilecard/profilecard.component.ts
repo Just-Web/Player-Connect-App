@@ -26,6 +26,8 @@ export class ProfilecardComponent implements OnInit {
     this.authService.getAllProfiles().subscribe(data => 
       {
         this.players = data;
+        
+        console.log(data);
       });
   }
 }

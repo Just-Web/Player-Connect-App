@@ -59,6 +59,7 @@ app.use(cors());
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname)));
 
 // Add Middleware necessary for REST API's
 app.use(bodyParser.json());
