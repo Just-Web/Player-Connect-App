@@ -40,3 +40,7 @@ Body :
 }
 ```
 
+## Get all the users profiles : GET - /users/all
+```http://localhost:3000/users/all```
+
+
