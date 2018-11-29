@@ -12,10 +12,10 @@ export class AuthService {
   constructor(private http: Http) { }
 
   //reach into backed URI and register user
-  registerUser(user){
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-      return this.http.post('http://localhost:3000/users/register', user,{headers: headers})
+  registerUser(fd){
+   // let headers = new Headers();
+   // headers.append('Content-Type','application/json');
+      return this.http.post('http://localhost:3000/users/register', fd)
       .pipe(map(res => res.json()));
   }
 

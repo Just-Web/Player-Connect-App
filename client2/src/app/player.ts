@@ -5,5 +5,6 @@ export class Player {
   socialsite: string;
   game: string;
   describe: string;
-
+  userImage: string;
+  
 }
