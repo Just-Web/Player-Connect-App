@@ -8,92 +8,41 @@ var cors = require('cors');
 var passport = require('passport');
 
 
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+let app = express();
+let http = require('http').Server(app);
+let io = require('socket.io')(http);
 
 const bcrypt = require('bcryptjs');
 const config = require('./config/database');
 const user = require('./routes/users');
 
-const client = require('socket.io').listen(4000).sockets;
+//const client = require('socket.io').listen(4000).sockets;
 // Setting port number for backend
 const port = 3000;
+
+io.on('connection', (socket) => {
+  console.log('user connected');
+
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+
+  socket.on('add-message', (message) => {
+    io.emit('message', {type:'new-message', text: message});
+  });
+});
+
+
+http.listen(5000, () => {
+console.log('started on port 5000');
+});
 
 // Connect to database
 mongoose.connect(config.database, function(err, db){
     if(err){
         throw err;
     }
-
-  //   console.log('MongoDB connected...');
-  //   io.on('connection', (socket) => {
-  //   console.log('user connected');
-  //
-  //   socket.on('disconnect', function(){
-  //     console.log('user disconnected');
-  //   });
-  //
-  //   socket.on('add-message', (message) => {
-  //     io.emit('message', {type:'new-message', text: message});
-  //   });
-  // });
-  //
-  // http.listen(5000, () => {
-  //   console.log('started on port 5000');
-  // });
-
-    // Connect to Socket.io
-    client.on('connection', function(socket){
-        let chat = db.collection('chats');
-
-        // Create function to send status
-        sendStatus = function(s){
-            socket.emit('status', s);
-        }
-
-        // Get chats from mongo collection
-        chat.find().limit(100).sort({_id:1}).toArray(function(err, res){
-            if(err){
-                throw err;
-            }
-
-            // Emit the messages
-            socket.emit('output', res);
-        });
-
-        // Handle input events
-        socket.on('input', function(data){
-            let name = data.name;
-            let message = data.message;
-
-            // Check for name and message
-            if(name == '' || message == ''){
-                // Send error status
-                sendStatus('Please enter a name and message');
-            } else {
-                // Insert message
-                chat.insert({name: name, message: message}, function(){
-                    client.emit('output', [data]);
-
-                    // Send status object
-                    sendStatus({
-                        message: 'Message sent',
-                        clear: true
-                    });
-                });
-            }
-        });
-
-        // Handle clear
-        socket.on('clear', function(data){
-            // Remove all chats from collection
-            chat.remove({}, function(){
-                // Emit cleared
-                socket.emit('cleared');
-            });
-        });
-    });
+    console.log('MongoDB connected...');
 });
 
 // On Connection
