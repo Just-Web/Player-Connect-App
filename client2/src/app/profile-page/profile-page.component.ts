@@ -25,6 +25,7 @@ export class ProfilePageComponent implements OnInit {
     // Grab username from URL and store in data member
     this.username = this.route.snapshot.paramMap.get('username');
 
+    if(!this.username){
     this.authService.getProfile().subscribe(profile =>{
       this.user=profile.user;
     },
@@ -32,7 +33,15 @@ export class ProfilePageComponent implements OnInit {
       console.log(err);
       return false;
     });
-
+} else {
+    this.authService.getUserProfile(this.username).subscribe(profile=>{
+      this.user=profile.user;
+    },
+    err=>{
+      console.log(err);
+      return false;
+    });
+}
     // Call a service which sends GET request to backend to look for user's info
     // Add error catching if user does not exist
   }

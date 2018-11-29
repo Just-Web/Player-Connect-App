@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {ValidateService} from '../services/validate.service';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
-import { Observable }     from 'rxjs/Observable';
+import { Observable }     from 'rxjs';
 import { Http, Headers, Request, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -22,7 +22,7 @@ export class RegistrationComponent implements OnInit {
   game: string;
   describe: string;
   selectedFile: File = null;
-  
+
   filledCorrectly: boolean;
 
   constructor(private validateService: ValidateService,
@@ -43,7 +43,7 @@ export class RegistrationComponent implements OnInit {
     fd.append('email', this.email );
     fd.append('username', this.username );
     fd.append('password', this.password );
-    fd.append('socialsite', this.socialsite ); 
+    fd.append('socialsite', this.socialsite );
     fd.append('game', this.game );
     fd.append('describe', this.describe );
 
@@ -58,7 +58,7 @@ export class RegistrationComponent implements OnInit {
         this.filledCorrectly = true;
         console.log('Registered success');
         this.router.navigate(['/login']);
-       } 
+       }
        else{
         this.filledCorrectly = false;
          console.log('something went wrong');

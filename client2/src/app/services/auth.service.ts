@@ -43,6 +43,14 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  getUserProfile(username){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    let url = 'http://localhost:3000/users/' + username;
+    return this.http.get(url, {headers: headers})
+      .pipe(map(res => res.json()));
+  }
+
   storeUserData(token, user){
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
