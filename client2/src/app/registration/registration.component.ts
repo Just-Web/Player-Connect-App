@@ -51,6 +51,7 @@ export class RegistrationComponent implements OnInit {
     if(this.socialsite == undefined){this.socialsite = 'N/A';}
     if(this.game == undefined){this.game = 'N/A';}
     if(this.describe == undefined){this.describe = 'N/A';}
+    // add same for profile image
 
     //Register User
     this.authService.registerUser(fd).subscribe(data=>{
