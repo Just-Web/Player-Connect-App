@@ -54,6 +54,11 @@ module.exports.getUserByUsername = function(username, callback){
   User.findOne(query, callback);
 }
 
+module.exports.getUserByGame = function(game, callback){
+  const query= {game: game}
+  User.find(query, callback);
+}
+
 // hash password
 module.exports.addUser = function(newUser, callback){
   bcrypt.genSalt(10, function(err,salt){

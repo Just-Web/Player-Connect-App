@@ -43,4 +43,5 @@ Body :
 ## Get all the users profiles : GET - /users/all
 ```http://localhost:3000/users/all```
 
-
+## Get all users by game: GET - /users/game/:game
+```http://localhost:3000/users/game/Minecraft```

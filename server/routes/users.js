@@ -27,12 +27,12 @@ router.post('/register', upload.single('userImage') ,function (req, res, next){
     socialsite: req.body.socialsite,
     game: req.body.game,
     describe: req.body.describe,
-    userImage:req.file.path 
+    userImage:req.file.path
   });
 
   User.addUser(newUser, function(err, user){
     if(err){
-      
+
       res.json({success: false, msg:'Failed to register user' + err});
     } else{
       res.json({success: true, msg:'User registered'});
@@ -117,6 +117,40 @@ router.get('/:username', function(req, res){
           }
       });
     }
+  });
+});
+
+router.get('/game/:game', function(req, res){
+  /*User.getUserByGame(req.params.game, function(err, usergame){
+    if(err) throw err;
+    if(!usergame){
+      return res.json({
+        success: false,
+        msg: 'Game not found'
+      });
+    } else{
+      res.json({
+        success:true,
+        usergame:{
+          id:usergame._id,
+          name: usergame.name,
+          username: usergame.username,
+          email: usergame.email,
+          socialsite: usergame.socialsite,
+          game: usergame.game,
+          describe: usergame.describe,
+          userImage:usergame.userImage
+          }
+      });
+    }
+  });*/
+ const query= {game: req.params.game};
+
+  User.find(query, function(err, docs){
+    if (err) throw err;
+    else res.json({
+      users : docs
+    });
   });
 });
 
