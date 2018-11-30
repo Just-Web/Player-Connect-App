@@ -1,16 +1,9 @@
-<!-- <mat-tab-group [@.disabled]="true">
-    <mat-tab label="First"> Content 1 </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
-</mat-tab-group>
-   -->
-
 <div class="container player-profile">
 <form method="post">
     <div class="row">
       <div class="col-md-4">
           <div class="profile-img">
-            <img src="http://3.16.119.157:3000/{{user.userImage}}" alt=""/>
+            <img src="http://localhost:3000/{{user.userImage}}" alt=""/>
           </div>
       </div>
       <div *ngIf="user" class="col-md-6">

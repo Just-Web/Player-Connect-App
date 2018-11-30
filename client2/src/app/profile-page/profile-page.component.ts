@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ValidateService} from '../services/validate.service';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
+import { Player } from '../player';
 
 @Component({
   selector: 'app-profile-page',
@@ -10,7 +11,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./profile-page.component.css']
 })
 export class ProfilePageComponent implements OnInit {
-  user:Object;
+  @Input() user: Player;
+  //user:Object;
   constructor(
     private route: ActivatedRoute,
     private validateService: ValidateService,
