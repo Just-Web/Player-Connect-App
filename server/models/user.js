@@ -77,6 +77,6 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
   });
 }
 
-module.export.modifyProfile = function(user, callback){
-  bcrypt.compare();
-}
+// module.export.modifyProfile = function(user, callback){
+//   bcrypt.compare();
+// }

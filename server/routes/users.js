@@ -85,14 +85,14 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), function(r
   res.json({user:req.user});
 });
 
-rotuer.put('/editprofile' passport.authenticate('jwt', {session:false}), function(req,res,next){
-  User.modifyProfile(username, user.username,function(err, isMatch){
-    if(err) throw err;
-    if(isMatch){
+// rotuer.put('/editprofile' passport.authenticate('jwt', {session:false}), function(req,res,next){
+//   User.modifyProfile(username, user.username,function(err, isMatch){
+//     if(err) throw err;
+//     if(isMatch){
       
-    }
-  });
-});
+//     }
+//   });
+// });
 
 router.get('/all', function(req, res){
   User.find({}, function(err, docs){
