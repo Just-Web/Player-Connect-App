@@ -6,8 +6,8 @@ export class ChatService {
   private url = 'http://localhost:5000';
   private socket;
 
-  sendMessage(message){
-    this.socket.emit('add-message', message);
+  sendMessage(message, username, picture){
+    this.socket.emit('add-message', {text: message, sender: username, image: picture});
   }
 
   getMessages() {

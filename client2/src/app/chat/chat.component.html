@@ -1,7 +1,7 @@
 <div *ngFor="let message of messages">
 
-  <img style="width:50px; border-radius:25px;" src="http://localhost:3000/{{user.userImage}}"/>
-  <span style="font-weight:bold;color:#5a3a78;padding-left:10px;">{{user.username}}</span>
+  <img style="width:50px; border-radius:25px;" src="http://localhost:3000/{{message.image}}"/>
+  <span style="font-weight:bold;color:#5a3a78;padding-left:10px;">{{message.sender}}</span>
   <p style="padding-left:60px">{{message.text}}</p>
 </div>
 <input [(ngModel)]="message" (keyup.enter)="sendMessage()" /><button (click)="sendMessage()">Send</button>
