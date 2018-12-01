@@ -53,17 +53,23 @@ export class RegistrationComponent implements OnInit {
     if(this.describe == undefined){this.describe = 'N/A';}
     // add same for profile image
 
-    //Register User
-    this.authService.registerUser(fd).subscribe(data=>{
-      if(data.success){
-        this.filledCorrectly = true;
-        console.log('Registered success');
-        this.router.navigate(['/login']);
-       }
-       else{
-        this.filledCorrectly = false;
-         console.log('something went wrong');
-       }
-    });
+    if(this.name != undefined && this.username != undefined && this.password != undefined && this.email != undefined){
+      //Register User
+      this.authService.registerUser(fd).subscribe(data=>{
+        if(data.success){
+          this.filledCorrectly = true;
+          console.log('Registered success');
+          this.router.navigate(['/login']);
+         }
+         else{
+          this.filledCorrectly = false;
+           console.log('something went wrong');
+           return;
+         }
+      });
+    }
+    else{
+      this.filledCorrectly = false;
+    }
   }
   }
