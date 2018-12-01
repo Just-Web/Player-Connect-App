@@ -10,10 +10,10 @@
                       <i class="fas fa-search h4 text-body"></i>
                   </div>
                   <div class="col">
-                      <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search game or player">
+                      <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search game or player" name="searchquery" [(ngModel)]="searchquery">
                   </div>
                   <div class="col-auto">
-                      <button class="btn btn-lg btn-success" type="submit">Search</button>
+                      <button class="btn btn-lg btn-success" type="submit" (click)="onClickSearch()">Search</button>
                   </div>
               </div>
           </form>
@@ -21,20 +21,23 @@
       <!--end of col-->
   </div>
 </div>
-<main>
+<div *ngIf="!noresult" class="alert alert-danger">
+        No players to show for this game
+</div>
+<main *ngIf="noresult">
   <div class="container-fluid">
     <div class="row">
         <div *ngFor="let player of players" class="col-sm-4">
         <div class="card">
           <img class="card-img-top img-fluid" src="http://localhost:3000/{{player.userImage}}" alt="Card image cap">
           <div class="card-block">
-            <h4 class="card-title">{{player.name}}</h4>
+            <h4 class="card-title">{{player.name}} </h4>
             <p class="card-text">{{player.username}}</p>
-            <h5 class="card-text"> {{player.games}}</h5>
+            <h5 class="card-text"> {{player.game}}</h5>
           </div>
           <div class="card-block">
-              <mat-icon fxFlex="10%" (click)="gotoProfile(player.username)" style="cursor: pointer">person</mat-icon>
-              <mat-icon fxFlex="10%" (click)="gotoChat(player.username)" style="cursor: pointer">chat</mat-icon>
+              <mat-icon fxFlex="10%" (click)="onClickProfile(player.username)" style="cursor: pointer">person</mat-icon>
+              <mat-icon fxFlex="10%" (click)="onClickChat(player.username)" style="cursor: pointer">chat</mat-icon>
           </div>
         </div>
       </div>

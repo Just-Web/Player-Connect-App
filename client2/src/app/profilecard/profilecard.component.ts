@@ -11,6 +11,9 @@ import { Player } from '../player';
 })
 export class ProfilecardComponent implements OnInit {
   @Input() players: Player;
+  searchquery: string;
+  noresult: boolean;
+
   
   constructor( private authService:AuthService,
     private router:Router,
@@ -19,18 +22,33 @@ export class ProfilecardComponent implements OnInit {
   ngOnInit() {
     // this.username = this.route.snapshot.paramMap.get('username');
     this.getAllPlayers();
-    
+    this.noresult = true;
   }
-  gotoProfile(username){
+  onClickProfile(username){
     this.router.navigate(['/profile/'+username]);
   }
-  gotoChat(username){
+  onClickChat(username){
     this.router.navigate(['/chat']);
   }
   getAllPlayers(): void {
     this.authService.getAllProfiles().subscribe(data => 
       {
         this.players = data;
+      });
+  }
+  onClickSearch(){
+    console.log(this.searchquery);
+    this.authService.searchGame(this.searchquery).subscribe(data => 
+      {
+        console.log(data.users.length);
+        if(data.users.length>=1)
+        {
+          this.players = data.users;
+        }
+        else 
+        {
+          this.noresult = false;
+        }
       });
   }
 }

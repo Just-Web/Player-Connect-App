@@ -42,6 +42,15 @@ export class AuthService {
     return this.http.get('http://localhost:3000/home', {headers: headers})
       .pipe(map(res => res.json()));
   }
+  searchGame(searchquery){
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type','application/json');
+    let url = 'http://localhost:3000/users/game/' + searchquery;
+    return this.http.get(url, {headers: headers})
+      .pipe(map(res => res.json()));
+  }
 
   getUserProfile(username){
     let headers = new Headers();
