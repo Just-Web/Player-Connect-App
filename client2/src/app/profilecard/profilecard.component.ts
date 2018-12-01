@@ -40,7 +40,6 @@ export class ProfilecardComponent implements OnInit {
     console.log(this.searchquery);
     this.authService.searchGame(this.searchquery).subscribe(data => 
       {
-        console.log(data.users.length);
         if(data.users.length>=1)
         {
           this.noresult = true;
