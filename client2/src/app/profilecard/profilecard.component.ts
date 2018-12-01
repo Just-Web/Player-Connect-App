@@ -43,6 +43,7 @@ export class ProfilecardComponent implements OnInit {
         console.log(data.users.length);
         if(data.users.length>=1)
         {
+          this.noresult = true;
           this.players = data.users;
         }
         else 
