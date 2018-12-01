@@ -33,7 +33,8 @@
             <h5 class="card-text"> {{player.games}}</h5>
           </div>
           <div class="card-block">
-              <mat-icon fxFlex="10%">chat</mat-icon>
+              <mat-icon fxFlex="10%" (click)="gotoProfile(player.username)" style="cursor: pointer">person</mat-icon>
+              <mat-icon fxFlex="10%" (click)="gotoChat(player.username)" style="cursor: pointer">chat</mat-icon>
           </div>
         </div>
       </div>

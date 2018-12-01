@@ -21,13 +21,16 @@ export class ProfilecardComponent implements OnInit {
     this.getAllPlayers();
     
   }
-
+  gotoProfile(username){
+    this.router.navigate(['/profile/'+username]);
+  }
+  gotoChat(username){
+    this.router.navigate(['/chat']);
+  }
   getAllPlayers(): void {
     this.authService.getAllProfiles().subscribe(data => 
       {
         this.players = data;
-        
-        console.log(data);
       });
   }
 }
