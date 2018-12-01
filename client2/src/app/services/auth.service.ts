@@ -12,7 +12,6 @@ export class AuthService {
 
   //reach into backed URI and register user
   registerUser(fd){
-
    // let headers = new Headers();
    // headers.append('Content-Type','application/json');
       return this.http.post('http://localhost:3000/users/register', fd)
