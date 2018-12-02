@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import * as io from 'socket.io-client';
 
 export class ChatService {
-  private url = 'http://localhost:5000';
+  private url = 'http://3.16.119.157:5000';
   private socket;
 
   sendMessage(message, username, picture){

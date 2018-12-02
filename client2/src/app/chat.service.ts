@@ -4,7 +4,7 @@ import * as io from 'socket.io-client';
 
 export class ChatService {
   // Our localhost address that we set in our server code
-  private url = 'http://localhost:4000';
+  private url = 'http://3.16.119.157:4000';
   private socket;
 
   sendMessage(message){
