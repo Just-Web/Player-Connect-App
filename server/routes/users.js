@@ -89,18 +89,23 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), function(r
 //   User.modifyProfile(username, user.username,function(err, isMatch){
 //     if(err) throw err;
 //     if(isMatch){
-      
+
 //     }
 //   });
 // });
 
 router.get('/all', function(req, res){
-  User.find({}, function(err, docs){
+  User.find({}, { projection: { _id: 0, name: 1, email:1, username:1, socialsite:1, game:1, describe:1 , userImage:1} }).toArray(function(err, result) {
+    if (err) throw err;
+    res.json(result);
+    db.close();
+  });
+  /*User.find({}, function(err, docs){
     if (err) throw err;
     else res.json({
       users : docs
     });
-  });
+  });*/
 });
 
 router.get('/:username', function(req, res){

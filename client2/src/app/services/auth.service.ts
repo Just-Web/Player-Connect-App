@@ -8,20 +8,23 @@ import {map} from 'rxjs/operators';
 export class AuthService {
   authToken: any;
   user: any;
+  private ip = 'localhost';
   constructor(private http: Http) { }
+
+
 
   //reach into backed URI and register user
   registerUser(fd){
    // let headers = new Headers();
    // headers.append('Content-Type','application/json');
-      return this.http.post('http://localhost:3000/users/register', fd)
+      return this.http.post('http://'+this.ip +':3000/users/register', fd)
       .pipe(map(res => res.json()));
   }
 
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/users/authenticate', user,{headers: headers})
+    return this.http.post('http://'+ this.ip +':3000/users/authenticate', user,{headers: headers})
       .pipe(map(res => res.json()));
   }
 
@@ -30,7 +33,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3000/users/profile', {headers: headers})
+    return this.http.get('http://' + this.ip +':3000/users/profile', {headers: headers})
       .pipe(map(res => res.json()));
   }
   getAllProfiles(){
@@ -38,7 +41,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3000/home', {headers: headers})
+    return this.http.get('http://' + this.ip + ':3000/home', {headers: headers})
       .pipe(map(res => res.json()));
   }
   searchGame(searchquery){
@@ -46,7 +49,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type','application/json');
-    let url = 'http://localhost:3000/users/game/' + searchquery;
+    let url = 'http://' + this.ip +':3000/users/game/' + searchquery;
     return this.http.get(url, {headers: headers})
       .pipe(map(res => res.json()));
   }
@@ -54,7 +57,7 @@ export class AuthService {
   getUserProfile(username){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    let url = 'http://localhost:3000/users/' + username;
+    let url = 'http://' + this.ip +':3000/users/' + username;
     return this.http.get(url, {headers: headers})
       .pipe(map(res => res.json()));
   }
