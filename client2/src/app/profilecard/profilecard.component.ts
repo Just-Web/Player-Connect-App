@@ -13,12 +13,13 @@ export class ProfilecardComponent implements OnInit {
   @Input() players: Player;
   searchquery: string;
   noresult: boolean;
+  private ip = "localhost";
 
-  
+
   constructor( private authService:AuthService,
     private router:Router,
     private appComponent:AppComponent) { }
-  
+
   ngOnInit() {
     // this.username = this.route.snapshot.paramMap.get('username');
     this.getAllPlayers();
@@ -27,25 +28,27 @@ export class ProfilecardComponent implements OnInit {
   onClickProfile(username){
     this.router.navigate(['/profile/'+username]);
   }
-  onClickChat(username){
-    this.router.navigate(['/chat']);
+  onClickChat(username, event){
+    event.stopPropagation();
+    var obj = document.getElementById('chatDropdownMenuButton');
+    obj.click();
   }
   getAllPlayers(): void {
-    this.authService.getAllProfiles().subscribe(data => 
+    this.authService.getAllProfiles().subscribe(data =>
       {
         this.players = data;
       });
   }
   onClickSearch(){
     console.log(this.searchquery);
-    this.authService.searchGame(this.searchquery).subscribe(data => 
+    this.authService.searchGame(this.searchquery).subscribe(data =>
       {
         if(data.users.length>=1)
         {
           this.noresult = true;
           this.players = data.users;
         }
-        else 
+        else
         {
           this.noresult = false;
         }

@@ -1,7 +1,41 @@
-<div *ngFor="let message of messages">
+<!--
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="accordion">
+                    <span class="glyphicon glyphicon-comment"></span> Chat
+                    <div class="btn-group pull-right">
+                        <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                            <p>click me</p>
+                        </a>
+                    </div>
+                </div>
+            <div class="panel-collapse collapse" id="collapseOne">
 
-  <img style="width:50px; border-radius:25px;" src="http://localhost:3000/{{message.image}}"/>
-  <span style="font-weight:bold;color:#5a3a78;padding-left:10px;">{{message.sender}}</span>
-  <p style="padding-left:60px">{{message.text}}</p>
+            </div>
+            </div>
+        </div>
+    </div>
 </div>
-<input [(ngModel)]="message" (keyup.enter)="sendMessage()" /><button (click)="sendMessage()">Send</button>
+-->
+
+<div class="panel-body" id="scrollingContainer" style="width:100%;">
+    <ul class="chat">
+        <li *ngFor="let message of messages">
+          <img style="width:50px; border-radius:25px;" src="http://{{ip}}:3000/{{message.image}}"/>
+          <span style="font-weight:bold;color:#5a3a78;padding-left:10px;">{{message.sender}}</span>
+          <p style="padding-left:60px">{{message.text}}</p>
+        </li>
+    </ul>
+</div>
+<div class="panel-footer" style="width:100%;">
+    <div class="input-group">
+        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." [(ngModel)]="message" (keyup.enter)="sendMessage()"/>
+        <span style="padding-left:5px;" class="input-group-btn">
+            <button class="btn btn-warning" id="btn-chat" (click)="sendMessage()">
+                Send</button>
+        </span>
+    </div>
+</div>

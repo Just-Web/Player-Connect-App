@@ -29,7 +29,7 @@
     <div class="row">
         <div *ngFor="let player of players" class="col-sm-4">
         <div class="card">
-          <img class="card-img-top img-fluid" src="http://localhost:3000/{{player.userImage}}" alt="Card image cap">
+          <img class="card-img-top img-fluid" src="http://{{ip}}:3000/{{player.userImage}}" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">{{player.name}} </h4>
             <p class="card-text">{{player.username}}</p>
@@ -37,7 +37,7 @@
           </div>
           <div class="card-block">
               <mat-icon fxFlex="10%" (click)="onClickProfile(player.username)" style="cursor: pointer">person</mat-icon>
-              <mat-icon fxFlex="10%" (click)="onClickChat(player.username)" style="cursor: pointer">chat</mat-icon>
+              <mat-icon fxFlex="10%" (click)="onClickChat(player.username, $event)" style="cursor: pointer">chat</mat-icon>
           </div>
         </div>
       </div>

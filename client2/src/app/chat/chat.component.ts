@@ -1,4 +1,4 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit,OnDestroy,AfterViewChecked } from '@angular/core';
 import { ChatService } from '../services/chat.service';
 import { AuthService } from '../services/auth.service';
 
@@ -8,12 +8,14 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./chat.component.css'],
   providers: [ChatService]
 })
-export class ChatComponent implements OnInit, OnDestroy {
+export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
   messages = [];
   user: any;
+  private ip = 'localhost';
   connection;
   message;
   name;
+
 
   constructor(private chatService:ChatService, private authService:AuthService) {}
 
@@ -36,6 +38,17 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.connection = this.chatService.getMessages().subscribe(message => {
       this.messages.push(message);
     })
+  }
+
+  ngAfterViewChecked(){
+    this.scrollToBottom();
+  }
+
+  scrollToBottom(): void {
+    try{
+      var myScrollContainer = document.getElementById("scrollingContainer");
+      myScrollContainer.scrollTop = myScrollContainer.scrollHeight;
+    } catch(err) {}
   }
 
   // Let's unsubscribe our Observable

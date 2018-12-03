@@ -26,6 +26,16 @@
     </ul>
 
     <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="chatDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Chat
+      </button>
+
+      <div class="dropdown-menu" style="width:300px;left:-200px;" aria-labelledby="chatdropdownMenuButton">
+        <a><app-chat></app-chat></a>
+      </div>
+    </div>
+
+    <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{loggedInUser}}
       </button>
