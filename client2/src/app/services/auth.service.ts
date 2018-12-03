@@ -41,7 +41,11 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type','application/json');
+<<<<<<< HEAD
     return this.http.get('http://' + this.ip + ':3000/home', {headers: headers})
+=======
+    return this.http.get('http://3.16.119.157:3000/home', {headers: headers})
+>>>>>>> 77f3aae4166d0ef765f4e3d258020b23f3b81f52
       .pipe(map(res => res.json()));
   }
   searchGame(searchquery){
