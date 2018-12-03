@@ -142,6 +142,7 @@ app.get('/cors', function(req, res, next) {
   })
 })
 
+
 //Initializing port number
 app.listen(port, function() {
   console.log('Server started on port ' + port);

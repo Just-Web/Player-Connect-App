@@ -1,12 +1,13 @@
 <div class="container player-profile">
 <form method="post">
-    <div class="row">
-      <div class="col-md-4">
-          <div class="profile-img">
-            <img src="http://3.16.119.157:3000/{{user.userImage}}" alt=""/>
-          </div>
-      </div>
-      <div *ngIf="user" class="col-md-6">
+      <div *ngIf="user">
+        <div class="row">
+        <div class="col-md-4">
+            <div class="profile-img">
+              <img src="http://localhost:3000/{{user.userImage}}" alt=""/>
+            </div>
+        </div>
+        <div class="col-md-6">
           <div class="profile-head">
             <h5>
                 {{username}}
@@ -56,6 +57,7 @@
             </mat-tab>
             </mat-tab-group>
           </div>
+        </div>
       </div>
     </div>
 </form>
