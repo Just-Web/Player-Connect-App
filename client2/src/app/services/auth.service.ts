@@ -8,7 +8,7 @@ import {map} from 'rxjs/operators';
 export class AuthService {
   authToken: any;
   user: any;
-  private ip = '3.16.119.157';
+  private ip = 'localhost';
   constructor(private http: Http) { }
 
 

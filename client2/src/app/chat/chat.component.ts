@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
 export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
   messages = [];
   user: any;
-  private ip = '3.16.119.157';
+  private ip = 'localhost';
   connection;
   message;
   name;

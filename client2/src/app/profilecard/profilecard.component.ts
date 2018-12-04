@@ -24,7 +24,7 @@ export class ProfilecardComponent implements OnInit {
     // this.username = this.route.snapshot.paramMap.get('username');
     this.getAllPlayers();
     this.noresult = true;
-    this.ip = '3.16.119.157';
+    this.ip = 'localhost';
   }
   onClickProfile(username){
     this.router.navigate(['/profile/'+username]);
@@ -42,17 +42,21 @@ export class ProfilecardComponent implements OnInit {
   }
   onClickSearch(){
     console.log(this.searchquery);
-    this.authService.searchGame(this.searchquery).subscribe(data =>
-      {
-        if(data.users.length>=1)
+    if(this.searchquery == "") return this.getAllPlayers();
+    else{
+      this.authService.searchGame(this.searchquery).subscribe(data =>
         {
-          this.noresult = true;
-          this.players = data.users;
-        }
-        else
-        {
-          this.noresult = false;
-        }
-      });
+          if(data.users.length>=1)
+          {
+            this.noresult = true;
+            this.players = data.users;
+          }
+          else
+          {
+            this.noresult = false;
+          }
+        });
+    }
+
   }
 }
