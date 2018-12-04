@@ -9,7 +9,7 @@ export class AuthService {
   loggedIn: boolean;
   authToken: any;
   user: any;
-  private ip = 'localhost';
+  private ip = '3.16.119.157';
   constructor(private http: Http) { }
 
 

@@ -22,7 +22,7 @@ export class ProfilePageComponent implements OnInit {
   // TEMPORARY using a string to store username grabbed from URL
   // AFTER BACKEND INTEGRATION have a User or Player data member
   username: string;
-  private ip = 'localhost';
+  private ip = '3.16.119.157';
 
   ngOnInit() {
     // Grab username from URL and store in data member

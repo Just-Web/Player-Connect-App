@@ -24,7 +24,7 @@ export class ProfilecardComponent implements OnInit {
     // this.username = this.route.snapshot.paramMap.get('username');
     this.getAllPlayers();
     this.noresult = true;
-    this.ip = 'localhost';
+    this.ip = '3.16.119.157';
   }
   onClickProfile(username){
     this.router.navigate(['/profile/'+username]);
