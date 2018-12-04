@@ -158,7 +158,7 @@ router.get('/game/:game', function(req, res){
       });
     }
   });*/
- const query= {game: req.params.game};
+ const query= {game: new RegExp(req.params.game)};
 
   User.find(query, function(err, docs){
     if (err) throw err;
