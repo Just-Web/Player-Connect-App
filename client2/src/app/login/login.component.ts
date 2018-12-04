@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
         this.appComponent.setLoggedInUser();
         this.router.navigate(['/dashboard']);
         this.success = data.success;
+        location.reload();
       }else{
         console.log(data.msg);
         this.router.navigate(['login']);

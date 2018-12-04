@@ -42,7 +42,10 @@ export class ProfilecardComponent implements OnInit {
   }
   onClickSearch(){
     console.log(this.searchquery);
-    if(this.searchquery == "") return this.getAllPlayers();
+    if(this.searchquery == "") {
+      this.noresult = true;
+      return this.getAllPlayers();
+    }
     else{
       this.authService.searchGame(this.searchquery).subscribe(data =>
         {

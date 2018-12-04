@@ -26,7 +26,6 @@ export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   ngOnInit() {
-
     this.authService.getProfile().subscribe(profile =>{
       this.user=profile.user;
     },

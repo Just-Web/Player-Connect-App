@@ -6,6 +6,7 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
+  loggedIn: boolean;
   authToken: any;
   user: any;
   private ip = 'localhost';
@@ -68,6 +69,13 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(user));
     this.authToken = token;
     this.user = user;
+  }
+
+  checkLoggedIn(){
+    if(localStorage.getItem('id_token') == undefined || localStorage.getItem('id_token') == null){
+      return false;
+    }
+    else return true;
   }
 
   loadToken(){
