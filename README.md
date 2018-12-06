@@ -1,5 +1,10 @@
 # Player-Connect-App
 
+- Player-Connect is a place for gamers to meet up and find people to play games with.
+- Every gamer want to knows when other gamers & friends are available to play online.
+- Hence, there is no unified channel that connects gamers
+- Strangers can sometimes bad teammates so, it's best for for gamers to connect and gain trust
+ 
 ## Project Setup 
 
 ### Client Side 
