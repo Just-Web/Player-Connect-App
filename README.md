@@ -8,20 +8,20 @@
 ## Project Setup 
 
 ### Client Side Setup
-- To install all the dependencies -  npm install 
+- To install all the dependencies -  `npm install` 
 
 ### Server Side 
-- To install all the dependencies -  npm install 
+- To install all the dependencies -  `npm install` 
 
 ## Running the Project Locally 
-#### Client - ` grunt serve`  (Change directory to the '/client' directory)
-#### Server - `nodemon index.js` (Change directory to the '/server' directory)
+- Client - ` grunt serve`  (Change directory to the '/client2' directory)
+- Server - `nodemon index.js` (Change directory to the '/server' directory)
 
-## Running Project on EC2 instance : 
+## Running Project on EC2 instance 
 - `ng serve --host=0.0.0.0 --disable-host-check` 
 - Refer : https://github.com/angular/angular-cli/issues/2542
 
-#### End Points
+## Backend End Points
 - Refer : https://github.com/Just-Web/Player-Connect-App/blob/master/server/README.md
 
 ## How to Install and Run MongoDB 
